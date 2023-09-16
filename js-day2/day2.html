@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let request = new XMLHttpRequest();
+      // console.log(request);
+      request.open("GET", "https://restcountries.com/v3.1/all");
+      request.send();
+      request.onload = function () {
+        let data = JSON.parse(request.response);
+        console.log(data);
+        console.log(data[88].area);
+        for (let i = 0; i < data.length; i++) {
+          // console.log(data[i].name.common);
+        }
+      };
+      // let b = {
+      //   x: "as",
+      // };
+      // let c = b;
+      // console.log(c);
+
+      // var x;
+      // console.log(x);
+      // x;
+      // console.log(x);
+
+      let arr = [1, 2, 3, 4, 5];
+      let result1 = [];
+      let result2 = [];
+      let result3 = [];
+      // Print odd numbers in an array
+      var odd = function (arr) {
+        for (let a = 0; a < arr.length; a++) {
+          if (arr[a] % 2 != 0) {
+            result1.push(arr[a]);
+          }
+        }
+      };
+      odd(arr);
+      console.log(result1);
+
+      // IIFE
+      (function (arr) {
+        for (let a = 0; a < arr.length; a++) {
+          if (arr[a] % 2 != 0) {
+            result2.push(arr[a]);
+          }
+        }
+        console.log(result2);
+      })(arr);
+
+      // arrow function
+      var oddArrowFunc = () => {
+        for (let a = 0; a < arr.length; a++) {
+          if (arr[a] % 2 != 0) {
+            result3.push(arr[a]);
+          }
+        }
+      };
+      oddArrowFunc(arr);
+      console.log(result3);
+
+      {
+      }
+    </script>
+  </body>
+</html>
