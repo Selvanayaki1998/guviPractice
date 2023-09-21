@@ -76,6 +76,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Palindromes:", palindromesAnoymous);
 
+  // Rotate an array by k times
+  let k = 7;
+  let array = [11, 22, 33, 44, 55];
+  let limit = k % 5;
+  let rotateARR = function () {
+    for (i = 0; i < limit; i++) {
+      array.unshift(array.pop(i));
+    }
+  };
+  rotateARR();
+  console.log(array, "***");
   // remove duplicate
   let removeDuplicates = function (arr) {
     return Array.from(new Set(arr));
@@ -155,6 +166,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Unique Array:", uniqueArrayAnonymous);
 
+  // Rotate arr
+  let arrVal = [10, 20, 30, 40, 50];
+  (function () {
+    let k = 99;
+
+    for (i = 0; i < k % 5; i++) {
+      arrVal.unshift(arrVal.pop(i));
+    }
+  })();
+  console.log(arrVal, "%%%%");
+
   // arrow function/////////////////////////////////////////////////////////////////////
   var oddArrowFunc = () => {
     for (let a = 0; a < arr.length; a++) {
@@ -229,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `Prime Number: ${primeNumbersAnonymous} \n` +
     `Palindrome: ${palindromesAnoymous} \n` +
     `Remove duplicates : ${uniqueArrayAnonymous} \n` +
+    `Rotate an array : ${array} \n` +
     `-----------------IIFE : -----------------\n` +
     `OddNumber: ${result2.join(", ")}\n` +
     `title caps: ${titleCaseArrayIIFE.join(", ")}\n` +
@@ -236,6 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `Prime Number: ${primeNumbersIIFE}\n` +
     `Palindrime: ${palindromesIIFE} \n` +
     `Remove duplicates : ${uniqueArrayArrowFunction} \n` +
+    `Rotate an array : ${arrVal} \n` +
     ` -------------ARROW FUNCTION: -----------------\n` +
     `OddNumber: ${result3.join(", ")}\n` +
     `title caps: ${titleCaseArrowFuncVal} \n ` +
